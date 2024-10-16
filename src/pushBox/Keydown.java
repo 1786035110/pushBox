@@ -8,7 +8,6 @@ public class Keydown {
     // 加载User32库，调用系统API
     public static interface User32 extends Library {
         User32 INSTANCE = Native.load("user32", User32.class);
-
         short GetAsyncKeyState(int vKey);
     }
 
