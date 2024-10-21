@@ -61,17 +61,17 @@ public class Background {
 
     //检查路径上是否有障碍
     public boolean check_wall(Item item, char dir) {
-        return !switch (dir) {
-            case 'w' -> map[item.getX() - 1][item.getY()].equals("#");
-            case 's' -> map[item.getX() + 1][item.getY()].equals("#");
-            case 'a' -> map[item.getX()][item.getY() - 1].equals("#");
-            case 'd' -> map[item.getX()][item.getY() + 1].equals("#");
+        return switch (dir) {
+            case 'w' -> map[item.getX() - 1][item.getY()].equals(" ");
+            case 's' -> map[item.getX() + 1][item.getY()].equals(" ");
+            case 'a' -> map[item.getX()][item.getY() - 1].equals(" ");
+            case 'd' -> map[item.getX()][item.getY() + 1].equals(" sssssdsaaaaawaasssassssa");
             default -> false;
         };
     }
 
     //加入按键监听事件，转化为字符判断方向
-    public char add_listening_events() throws InterruptedException {
+    public char addListeningEvents() throws InterruptedException {
         char key = keydown.returnKey();
 
         if (key == 'w' || key == 'W') {
@@ -94,7 +94,7 @@ public class Background {
 
     //人物实现移动
     public void move() throws InterruptedException {
-        switch (add_listening_events()) {
+        switch (addListeningEvents()) {
             case 'w' : if (check_wall(man, 'w')) man.setX(man.getX() - 1); break;
             case 's' : if (check_wall(man, 's')) man.setX(man.getX() + 1); break;
             case 'a' : if (check_wall(man, 'a')) man.setY(man.getY() - 1); break;
