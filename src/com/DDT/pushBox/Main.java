@@ -7,10 +7,8 @@ public class Main {
         background.display();
         while (true) {
             background.update_move();
-            background.move(background.add_listening_events());
-
+            background.move();
         }
-
     }
 }
 

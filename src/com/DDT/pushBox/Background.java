@@ -93,8 +93,8 @@ public class Background {
     }
 
     //人物实现移动
-    public void move(char dir) {
-        switch (dir) {
+    public void move() throws InterruptedException {
+        switch (add_listening_events()) {
             case 'w' : if (check_wall(man, 'w')) man.setX(man.getX() - 1); break;
             case 's' : if (check_wall(man, 's')) man.setX(man.getX() + 1); break;
             case 'a' : if (check_wall(man, 'a')) man.setY(man.getY() - 1); break;

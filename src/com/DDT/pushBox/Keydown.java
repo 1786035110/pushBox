@@ -21,6 +21,7 @@ public class Keydown {
                 if (ch == '%') ch = 'a';
                 if (ch == '\'') ch = 'd';
 
+                //通过打印换行，实现控制台刷新
                 System.out.println(new String(new char[50]).replace("\0", "\r\n"));
                 return ch;
             }
