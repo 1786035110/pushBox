@@ -1,4 +1,4 @@
-package com.DDT.pushBox;
+package com.DDT.pushBox.bean;
 
 import java.util.Random;
 
@@ -7,7 +7,7 @@ public abstract class Item {
     private int y;
 
     public Item(int n, int m) {
-        //随机生成箱子的坐标
+        //随机生成坐标
         Random random = new Random();
         x = random.nextInt(1, n - 1);
         y = random.nextInt(1, m - 1);
@@ -29,3 +29,4 @@ public abstract class Item {
         return y;
     }
 }
+
