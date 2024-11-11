@@ -1,6 +1,4 @@
-package com.DDT.pushBox;
-
-import com.DDT.pushBox.bean.Item;
+package com.DDT.pushBox.bean;
 
 import java.util.Random;
 
@@ -8,6 +6,7 @@ public class Target extends Item {
 
     public Target(int n, int m, int player_x, int player_y) {
         super(n, m);
+        this.setType("T");
 
         //随机生成箱子的坐标
         Random random = new Random();

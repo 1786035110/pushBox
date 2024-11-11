@@ -5,6 +5,7 @@ import java.util.Random;
 public abstract class Item {
     private int x;
     private int y;
+    private String type;
 
     public Item(int n, int m) {
         //随机生成坐标
@@ -21,12 +22,20 @@ public abstract class Item {
         this.y = y;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public int getX() {
         return x;
     }
 
     public int getY() {
         return y;
+    }
+
+    public String getType() {
+        return type;
     }
 }
 

@@ -1,5 +1,12 @@
 package com.DDT.pushBox;
 
+import com.DDT.pushBox.bean.Box;
+import com.DDT.pushBox.bean.Player;
+
+import java.util.Objects;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
 public class Control {
 
     Keydown keydown = new Keydown();
@@ -13,6 +20,36 @@ public class Control {
         this.map = background.getMap();
         this.player = background.getPlayer();
         this.box = background.getBox();
+    }
+
+    public static void login() {
+        System.out.println("欢迎进入推箱子游戏");
+        ResourceBundle bundle = ResourceBundle.getBundle("com.DDT.pushBox.resources.user");
+        String username = bundle.getString("username");
+        String password = bundle.getString("password");
+
+        do {
+            System.out.print("请输入用户名:");
+            Scanner sc = new Scanner(System.in);
+            String name = sc.nextLine();
+            if (Objects.equals(name, username)){
+                break;
+            } else {
+                System.out.println("用户名不存在");
+            }
+        } while (true);
+
+        do {
+            System.out.print("请输入密码:");
+            Scanner sc = new Scanner(System.in);
+            String pwd = sc.nextLine();
+            if (Objects.equals(pwd, password)){
+                break;
+            } else {
+                System.out.println("密码错误");
+            }
+        } while (true);
+        System.out.println(new String(new char[50]).replace("\0", "\r\n"));
     }
     
     //开始游戏
@@ -51,8 +88,8 @@ public class Control {
 
     //更新地图
     public void update_map() {
-        map[player.getX()][player.getY()] = "O";
-        map[box.getX()][box.getY()] = "X";
+        map[player.getX()][player.getY()] = player.getType();
+        map[box.getX()][box.getY()] = box.getType();
     }
 
     //人物实现移动

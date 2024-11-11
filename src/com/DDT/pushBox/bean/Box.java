@@ -1,6 +1,4 @@
-package com.DDT.pushBox;
-
-import com.DDT.pushBox.bean.Item;
+package com.DDT.pushBox.bean;
 
 import java.util.Random;
 
